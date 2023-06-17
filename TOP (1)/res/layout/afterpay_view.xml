@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/checkout_afterpay_personal_details" style="@style/AdyenCheckout.AfterPay.SectionTitle" />
+    <TextView android:id="@id/textView_personalDetailSummery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textIsSelectable="true" style="@style/AdyenCheckout.AfterPay.SectionDetail" />
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_firstName" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/AdyenCheckout.TextInputLayout">
+        <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.FirstNameInput" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_lastName" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/AdyenCheckout.TextInputLayout">
+        <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.LastNameInput" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.tabs.TabLayout android:id="@id/tabLayout_gender" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/AdyenCheckout.TabLayout">
+        <com.google.android.material.tabs.TabItem android:id="@id/tab_male" android:layout="@layout/tab_view_start_male" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        <com.google.android.material.tabs.TabItem android:id="@id/tab_female" android:layout="@layout/tab_view_end_female" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+    </com.google.android.material.tabs.TabLayout>
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_dateOfBirth" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/AdyenCheckout.TextInputLayout">
+        <com.adyen.checkout.afterpay.ui.DateOfBirthInput android:inputType="none" style="@style/AdyenCheckout.AfterPay.DateOfBirthInput" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_phoneNumber" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/AdyenCheckout.TextInputLayout">
+        <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.PhoneNumberInput" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_emailAddress" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/AdyenCheckout.TextInputLayout">
+        <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.EmailAddressInput" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/checkout_afterpay_billing_address" style="@style/AdyenCheckout.AfterPay.SectionTitle" />
+    <TextView android:id="@id/textView_billingAddressSummery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textIsSelectable="true" style="@style/AdyenCheckout.AfterPay.SectionDetail" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_street" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_weight="2.0" android:layout_marginEnd="10.0dip" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText android:nextFocusRight="@id/textInputLayout_house_number" style="@style/AdyenCheckout.AfterPay.StreetInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_house_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="4.0" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.HouseNumberInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_postal_code" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_weight="4.0" android:layout_marginEnd="10.0dip" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.PostalCodeInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_city" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.CityInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_country" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0" style="@style/AdyenCheckout.TextInputLayout">
+        <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.CountryInput" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.appcompat.widget.SwitchCompat android:id="@id/separate_delivery_address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/checkout_afterpay_separate_delivery_address" style="@style/AdyenCheckout.Switch" />
+    <TextView android:id="@id/delivery_address_title" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/checkout_afterpay_delivery_address" style="@style/AdyenCheckout.AfterPay.SectionTitle" />
+    <TextView android:id="@id/textView_deliveryAddressSummery" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textIsSelectable="true" style="@style/AdyenCheckout.AfterPay.SectionDetail" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/delivery_address_section1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_delivery_street" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_weight="2.0" android:layout_marginEnd="10.0dip" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.StreetInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_delivery_house_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="4.0" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.HouseNumberInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/delivery_address_section2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_delivery_postal_code" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_weight="4.0" android:layout_marginEnd="10.0dip" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.PostalCodeInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_delivery_city" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0" style="@style/AdyenCheckout.TextInputLayout">
+            <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.CityInput" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout android:id="@id/textInputLayout_delivery_country" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="2.0" style="@style/AdyenCheckout.TextInputLayout">
+        <com.adyen.checkout.base.ui.view.AdyenTextInputEditText style="@style/AdyenCheckout.AfterPay.CountryInput" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/AdyenCheckout.AfterPay.HR" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/standard_quarter_margin">
+        <TextView android:id="@id/agreement_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:textIsSelectable="false" style="@style/AdyenCheckout.HyperTextView" />
+        <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/checkbox_agreement" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/AdyenCheckout.CheckBox" />
+    </LinearLayout>
+</merge>

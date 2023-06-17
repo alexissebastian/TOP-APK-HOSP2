@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatButton android:id="@id/payButton" android:layout_width="fill_parent" android:text="@string/continue_button" style="@style/AdyenCheckout.Button.Colored" />
+    <TextView android:textSize="16.0sp" android:textStyle="normal" android:textColor="@color/primaryColor" android:gravity="center" android:layout_gravity="center" android:id="@id/others" android:paddingBottom="@dimen/standard_half_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/change_payment_method" />
+</LinearLayout>

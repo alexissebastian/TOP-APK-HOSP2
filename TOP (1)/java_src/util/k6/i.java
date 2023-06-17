@@ -1,0 +1,535 @@
+package util.k6;
+
+import androidx.core.view.InputDeviceCompat;
+import androidx.exifinterface.media.ExifInterface;
+import androidx.fragment.app.FragmentTransaction;
+import com.gemalto.idp.mobile.otp.cap.CapResultCode;
+/* loaded from: classes.dex */
+public class i extends com.drew.metadata.h<j> {
+    public i(j jVar) {
+        super(jVar);
+    }
+
+    private String M() {
+        return u(0, 2);
+    }
+
+    public String A() {
+        return l(5120, 1, "Standard", null, "Wide");
+    }
+
+    public String B() {
+        Integer l = ((j) this.f13435a).l(5122);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 1) {
+                if (intValue != 256) {
+                    if (intValue != 32768) {
+                        if (intValue != 512) {
+                            if (intValue != 513) {
+                                return "Unknown (" + l + ")";
+                            }
+                            return "Wide 2 (400%)";
+                        }
+                        return "Wide 1 (230%)";
+                    }
+                    return "Film Simulation";
+                }
+                return "Standard (100%)";
+            }
+            return "Manual";
+        }
+        return "Auto (100-400%)";
+    }
+
+    public String C() {
+        return m(4147, "Auto", "Manual");
+    }
+
+    public String D() {
+        Integer l = ((j) this.f13435a).l(4148);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 256) {
+            if (intValue != 512) {
+                if (intValue != 768) {
+                    return "Unknown (" + l + ")";
+                }
+                return "DR (Dynamic Range Priority)";
+            }
+            return "SN (Signal to Noise Priority)";
+        }
+        return "HR (High Resolution)";
+    }
+
+    public String E() {
+        Integer l = ((j) this.f13435a).l(5121);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 256) {
+                if (intValue != 272) {
+                    if (intValue != 288) {
+                        if (intValue != 304) {
+                            if (intValue != 512) {
+                                if (intValue != 768) {
+                                    if (intValue != 1024) {
+                                        if (intValue != 1280) {
+                                            if (intValue != 1281) {
+                                                return "Unknown (" + l + ")";
+                                            }
+                                            return "Pro Neg. Hi";
+                                        }
+                                        return "Pro Neg. Std";
+                                    }
+                                    return "F4/Velvia";
+                                }
+                                return "F3/Studio Portrait Ex";
+                            }
+                            return "F2/Fujichrome (Velvia)";
+                        }
+                        return "F1c/Studio Portrait Increased Sharpness";
+                    }
+                    return "F1b/Studio Portrait Smooth Skin Tone (Astia)";
+                }
+                return "F1a/Studio Portrait Enhanced Saturation";
+            }
+            return "F1/Studio Portrait";
+        }
+        return "F0/Standard (Provia) ";
+    }
+
+    public String F() {
+        Integer l = ((j) this.f13435a).l(4624);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 16) {
+                if (intValue != 48) {
+                    return "Unknown (" + l + ")";
+                }
+                return "B&W";
+            }
+            return "Chrome";
+        }
+        return "Standard";
+    }
+
+    public String G() {
+        com.drew.lang.k p = ((j) this.f13435a).p(4113);
+        if (p == null) {
+            return null;
+        }
+        return p.x(false) + " EV (Apex)";
+    }
+
+    public String H() {
+        return m(4112, "Auto", "On", "Off", "Red-eye Reduction", "External");
+    }
+
+    public String I() {
+        return m(4129, "Auto Focus", "Manual Focus");
+    }
+
+    public String J() {
+        return m(4865, "Good Focus", "Out Of Focus");
+    }
+
+    public String K() {
+        Integer l = ((j) this.f13435a).l(4110);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 256) {
+                if (intValue != 512) {
+                    return "Unknown (" + l + ")";
+                }
+                return "Weak";
+            }
+            return "Strong";
+        }
+        return "Normal";
+    }
+
+    public String L() {
+        return m(4128, "Off", "On");
+    }
+
+    public String N() {
+        Integer l = ((j) this.f13435a).l(4107);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 64) {
+            if (intValue != 128) {
+                if (intValue != 256) {
+                    return "Unknown (" + l + ")";
+                }
+                return "N/A";
+            }
+            return "Normal";
+        }
+        return "Low";
+    }
+
+    public String O() {
+        Integer l = ((j) this.f13435a).l(4145);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 27) {
+            if (intValue != 28) {
+                if (intValue != 256) {
+                    if (intValue != 512) {
+                        if (intValue != 768) {
+                            switch (intValue) {
+                                case 0:
+                                    return "Auto";
+                                case 1:
+                                    return "Portrait scene";
+                                case 2:
+                                    return "Landscape scene";
+                                case 3:
+                                    return "Macro";
+                                case 4:
+                                    return "Sports scene";
+                                case 5:
+                                    return "Night scene";
+                                case 6:
+                                    return "Program AE";
+                                case 7:
+                                    return "Natural Light";
+                                case 8:
+                                    return "Anti-blur";
+                                case 9:
+                                    return "Beach & Snow";
+                                case 10:
+                                    return "Sunset";
+                                case 11:
+                                    return "Museum";
+                                case 12:
+                                    return "Party";
+                                case 13:
+                                    return "Flower";
+                                case 14:
+                                    return "Text";
+                                case 15:
+                                    return "Natural Light & Flash";
+                                case 16:
+                                    return "Beach";
+                                case 17:
+                                    return "Snow";
+                                case 18:
+                                    return "Fireworks";
+                                case 19:
+                                    return "Underwater";
+                                case 20:
+                                    return "Portrait with Skin Correction";
+                                default:
+                                    switch (intValue) {
+                                        case 22:
+                                            return "Panorama";
+                                        case 23:
+                                            return "Night (Tripod)";
+                                        case 24:
+                                            return "Pro Low-light";
+                                        case 25:
+                                            return "Pro Focus";
+                                        default:
+                                            return "Unknown (" + l + ")";
+                                    }
+                            }
+                        }
+                        return "Manual exposure";
+                    }
+                    return "Shutter priority AE";
+                }
+                return "Aperture priority AE";
+            }
+            return "Cat Face Detection";
+        }
+        return "Dog Face Detection";
+    }
+
+    public String P() {
+        Integer l = ((j) this.f13435a).l(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 1) {
+            if (intValue != 2) {
+                if (intValue != 3) {
+                    if (intValue != 4) {
+                        if (intValue != 5) {
+                            if (intValue != 130) {
+                                if (intValue != 132) {
+                                    if (intValue != 32768) {
+                                        if (intValue != 65535) {
+                                            return "Unknown (" + l + ")";
+                                        }
+                                        return "N/A";
+                                    }
+                                    return "Film Simulation";
+                                }
+                                return "Medium Hard";
+                            }
+                            return "Medium Soft";
+                        }
+                        return "Hardest";
+                    }
+                    return "Hard";
+                }
+                return "Normal";
+            }
+            return "Soft";
+        }
+        return "Softest";
+    }
+
+    public String Q() {
+        return m(4144, "Off", "On");
+    }
+
+    public String R() {
+        Integer l = ((j) this.f13435a).l(CapResultCode.TOKEN_WRAPPED_COUNTER);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 128) {
+                if (intValue != 256) {
+                    if (intValue != 384) {
+                        if (intValue != 512) {
+                            if (intValue != 768) {
+                                if (intValue != 32768) {
+                                    return "Unknown (" + l + ")";
+                                }
+                                return "Film Simulation";
+                            }
+                            return "None (B&W)";
+                        }
+                        return "Low";
+                    }
+                    return "Medium Low";
+                }
+                return "High";
+            }
+            return "Medium High";
+        }
+        return "Normal";
+    }
+
+    public String S() {
+        Integer l = ((j) this.f13435a).l(InputDeviceCompat.SOURCE_TOUCHSCREEN);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 256) {
+                if (intValue != 512) {
+                    if (intValue != 1024) {
+                        if (intValue != 1280) {
+                            if (intValue != 4080) {
+                                switch (intValue) {
+                                    case 768:
+                                        return "Daylight Fluorescent";
+                                    case 769:
+                                        return "Day White Fluorescent";
+                                    case 770:
+                                        return "White Fluorescent";
+                                    case 771:
+                                        return "Warm White Fluorescent";
+                                    case 772:
+                                        return "Living Room Warm White Fluorescent";
+                                    default:
+                                        switch (intValue) {
+                                            case 3840:
+                                                return "Custom White Balance";
+                                            case 3841:
+                                                return "Custom White Balance 2";
+                                            case 3842:
+                                                return "Custom White Balance 3";
+                                            case 3843:
+                                                return "Custom White Balance 4";
+                                            case 3844:
+                                                return "Custom White Balance 5";
+                                            default:
+                                                return "Unknown (" + l + ")";
+                                        }
+                                }
+                            }
+                            return "Kelvin";
+                        }
+                        return ExifInterface.TAG_FLASH;
+                    }
+                    return "Incandescence";
+                }
+                return "Cloudy";
+            }
+            return "Daylight";
+        }
+        return "Auto";
+    }
+
+    @Override // com.drew.metadata.h
+    public String f(int i) {
+        if (i != 0) {
+            if (i != 4102) {
+                if (i != 4107) {
+                    if (i != 4110) {
+                        if (i != 4352) {
+                            if (i != 4624) {
+                                if (i != 4112) {
+                                    if (i != 4113) {
+                                        if (i != 4128) {
+                                            if (i != 4129) {
+                                                if (i != 4144) {
+                                                    if (i != 4145) {
+                                                        if (i != 4147) {
+                                                            if (i != 4148) {
+                                                                switch (i) {
+                                                                    case FragmentTransaction.TRANSIT_FRAGMENT_OPEN /* 4097 */:
+                                                                        return P();
+                                                                    case InputDeviceCompat.SOURCE_TOUCHSCREEN /* 4098 */:
+                                                                        return S();
+                                                                    case FragmentTransaction.TRANSIT_FRAGMENT_FADE /* 4099 */:
+                                                                        return y();
+                                                                    case CapResultCode.TOKEN_WRAPPED_COUNTER /* 4100 */:
+                                                                        return R();
+                                                                    default:
+                                                                        switch (i) {
+                                                                            case 4864:
+                                                                                return x();
+                                                                            case 4865:
+                                                                                return J();
+                                                                            case 4866:
+                                                                                return w();
+                                                                            default:
+                                                                                switch (i) {
+                                                                                    case 5120:
+                                                                                        return A();
+                                                                                    case 5121:
+                                                                                        return E();
+                                                                                    case 5122:
+                                                                                        return B();
+                                                                                    default:
+                                                                                        return super.f(i);
+                                                                                }
+                                                                        }
+                                                                }
+                                                            }
+                                                            return D();
+                                                        }
+                                                        return C();
+                                                    }
+                                                    return O();
+                                                }
+                                                return Q();
+                                            }
+                                            return I();
+                                        }
+                                        return L();
+                                    }
+                                    return G();
+                                }
+                                return H();
+                            }
+                            return F();
+                        }
+                        return v();
+                    }
+                    return K();
+                }
+                return N();
+            }
+            return z();
+        }
+        return M();
+    }
+
+    public String v() {
+        return m(4352, "Off", "On", "No Flash & Flash");
+    }
+
+    public String w() {
+        return m(4866, "AE Good", "Over Exposed");
+    }
+
+    public String x() {
+        return m(4864, "No Blur Warning", "Blur warning");
+    }
+
+    public String y() {
+        Integer l = ((j) this.f13435a).l(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 128) {
+                if (intValue != 256) {
+                    if (intValue != 384) {
+                        if (intValue != 512) {
+                            if (intValue != 32768) {
+                                switch (intValue) {
+                                    case 768:
+                                        return "None (B&W)";
+                                    case 769:
+                                        return "B&W Green Filter";
+                                    case 770:
+                                        return "B&W Yellow Filter";
+                                    case 771:
+                                        return "B&W Blue Filter";
+                                    case 772:
+                                        return "B&W Sepia";
+                                    default:
+                                        return "Unknown (" + l + ")";
+                                }
+                            }
+                            return "Film Simulation";
+                        }
+                        return "Low";
+                    }
+                    return "Medium Low";
+                }
+                return "High";
+            }
+            return "Medium High";
+        }
+        return "Normal";
+    }
+
+    public String z() {
+        Integer l = ((j) this.f13435a).l(4102);
+        if (l == null) {
+            return null;
+        }
+        int intValue = l.intValue();
+        if (intValue != 0) {
+            if (intValue != 256) {
+                if (intValue != 768) {
+                    return "Unknown (" + l + ")";
+                }
+                return "Low";
+            }
+            return "High";
+        }
+        return "Normal";
+    }
+}

@@ -1,0 +1,33 @@
+.class public interface abstract Lcom/facebook/react/modules/core/DeviceEventManagerModule$RCTDeviceEventEmitter;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/facebook/react/bridge/JavaScriptModule;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/facebook/react/modules/core/DeviceEventManagerModule;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "RCTDeviceEventEmitter"
+.end annotation
+
+.annotation build Lutil/j9/a;
+.end annotation
+
+
+# virtual methods
+.method public abstract emit(Ljava/lang/String;Ljava/lang/Object;)V
+    .param p1    # Ljava/lang/String;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+.end method

@@ -1,0 +1,152 @@
+{
+    "currencies" : 
+    { 
+        "EUR" : "978", "SEK" : "752",
+        "NOK" : "578", "RUB" : "643",
+        "LVL" : "428", "LTL" : "440",
+        "PLN" : "985", "DKK" : "208",
+        "Other" : "999"
+    },
+
+    "primitives" :
+    {
+        "INPUT_CHALLENGE" : { "type" : "IDG", "tag" : "9F37",
+                              "min_length" : 0, "max_length" : 8 },
+        "INPUT_AMOUNT" : { "type" : "DID", "tag" : "9F03",
+                           "min_length" : 1, "max_length" : 12 },
+        "INPUT_ACCOUNT_NUMBER" : { "type" : "ID", "tag" : "DF03",
+                                   "min_length" : 1, "max_length" : 17 },
+        "INPUT_TO_ACCOUNT" : { "type" : "ID", "tag" : "DF04",
+                               "min_length" : 1, "max_length" : 17 },
+        "INPUT_FROM_ACCOUNT" : { "type" : "ID", "tag" : "5A",
+                                 "min_length" : 1, "max_length" : 17 },
+        "INPUT_PG_BG" : { "type" : "SD", "tag" : "DF06",
+                          "allowed_values" : {"PG" : "1", "BG" : "2"} },
+        "INPUT_REFERENCE_NUMBER" : { "type" : "ID", "tag" : "DF08",
+                                     "min_length" : 0, "max_length" : 30 },
+        "INPUT_DATE" : { "type" : "ID", "tag" : "9A",
+                         "min_length" : 6, "max_length" : 8 },
+        "INPUT_CHECKSUM" : { "type" : "ID", "tag" : "DF64",
+                             "min_length" : 0, "max_length" : 17 },
+        "INPUT_CURRENCY" : { "type" : "SD", "tag" : "5F2A",
+                             "allowed_values" : "currencies" },
+        "INPUT_AMOUNT_WITH_CURRENCY" : { "type" : "DID", "tag" : "9F02",
+                                         "min_length" : 1, "max_length" : 12 },
+        "INPUT_BUY_SELL" : { "type" : "SD", "tag" : "DF17",
+                             "allowed_values" : { "BUY" : "1", "SELL" : "2" }},
+        "INPUT_IBAN" : { "type" : "ID", "tag" : "DF18",
+                         "min_length" : 6, "max_length" : 30 },
+        "INPUT_USER_ID" : { "type" : "ID", "tag" : "DF20",
+                            "min_length" : 0, "max_length" : 17 },
+        "INPUT_IDENTITY_NUMBER" : { "type" : "ID", "tag" : "DF23",
+                                    "min_length" : 6, "max_length" : 17 },
+        "INPUT_EXTRA_CODE" : { "type" : "IDG", "tag" : "DF24",
+                               "min_length" : 2, "max_length" : 12 },
+        "INPUT_PHONE_NUMBER" : { "type" : "ID", "tag" : "DF26",
+                                 "min_length" : 5, "max_length" : 17 },
+        "INPUT_DATA" : { "type" : "ID", "tag" : "DF71",
+                         "min_length" : 1, "max_length" : 17 },
+        "INPUT_DATA_2" : { "type" : "ID", "tag" : "DF72",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_3" : { "type" : "ID", "tag" : "DF73",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_4" : { "type" : "ID", "tag" : "DF74",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_5" : { "type" : "ID", "tag" : "DF75",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_6" : { "type" : "ID", "tag" : "DF76",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_7" : { "type" : "ID", "tag" : "DF77",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_8" : { "type" : "ID", "tag" : "DF78",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_9" : { "type" : "ID", "tag" : "DF79",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_DATA_10" : { "type" : "ID", "tag" : "DF7A",
+                         "min_length" : 0, "max_length" : 17 },
+        "INPUT_TOTAL_AMOUNT" : { "type" : "DID", "tag" : "DF39",
+                                 "min_length" : 1, "max_length" : 12 },
+        "MESSAGE_INTERNATIONAL_PAYMENT" : { "type" : "MD", "tag" : "BF11" },
+        "MESSAGE_BUY_SELL_SHARES" : { "type" : "MD", "tag" : "BF12" },
+        "MESSAGE_NEW_PHONE_NUMBER" : { "type" : "MD", "tag" : "BF13" },
+        "MESSAGE_CONFIRM_PROTECT_FILE" : { "type" : "MD", "tag" : "BF15" },
+        "MESSAGE_CONFIRM_AGREEMENT" : { "type" : "MD", "tag" : "BF16" },
+        "MESSAGE_NEW_BENEFICIARY" : { "type" : "MD", "tag" : "BF18" },
+        "INFO_MESSAGE_CONTACT_NORDEA" : { "type" : "IMD", "tag" : "BF20" }
+    },
+
+    "templates" :
+    {
+         "1" : [
+            [ "INPUT_USER_ID" ],
+            [ "LOGIN", "SIGN" ] ],
+         "2" : [
+            [ "INFO_MESSAGE_CONTACT_NORDEA" ],
+            [ "LOGIN", "BUY", "SIGN" ] ],
+         "3" : [
+            [ "INPUT_IDENTITY_NUMBER" ],
+            [ "LOGIN", "SIGN" ] ],
+         "4" : [
+            [ "INPUT_EXTRA_CODE" ],
+            [ "LOGIN", "SIGN", "BUY" ] ],
+         "5" : [
+            [ "INPUT_PHONE_NUMBER", "INPUT_AMOUNT" ],
+            [ "SIGN" ] ],
+         "6" : [
+            [ "INPUT_DATA", "INPUT_DATA_2", "INPUT_DATA_3", "INPUT_DATA_4", "INPUT_DATA_5", "INPUT_DATA_6", "INPUT_DATA_7", "INPUT_DATA_8", "INPUT_DATA_9", "INPUT_DATA_10" ],
+            [ "LOGIN", "SIGN", "BUY" ] ],
+         "7" : [
+            [ "MESSAGE_NEW_BENEFICIARY", "INPUT_ACCOUNT_NUMBER" ],
+            [ "SIGN" ] ],
+         "8" : [
+            [ "MESSAGE_NEW_PHONE_NUMBER" , "INPUT_PHONE_NUMBER" ],
+            [ "SIGN" , "BUY" ] ],
+         "9" : [
+            [ "INPUT_AMOUNT" ],
+            [ "SIGN" , "BUY" ] ],
+        "10" : [
+            [ "INPUT_TO_ACCOUNT" , "INPUT_AMOUNT" ],
+            [ "SIGN" ] ],
+        "11" : [
+            [ "INPUT_FROM_ACCOUNT", "INPUT_AMOUNT" ],
+            [ "SIGN" ] ],
+        "12" : [
+            [ "INPUT_FROM_ACCOUNT", "INPUT_TO_ACCOUNT", "INPUT_AMOUNT" ],
+            [ "SIGN" ] ],
+        "13" : [
+            [ "INPUT_CURRENCY", "INPUT_AMOUNT_WITH_CURRENCY" ],
+            [ "SIGN" ] ],
+        "14" : [
+            [ "MESSAGE_INTERNATIONAL_PAYMENT", "INPUT_AMOUNT" ],
+            [ "SIGN" ] ],
+        "15" : [
+            [ "MESSAGE_INTERNATIONAL_PAYMENT", "INPUT_IBAN", "INPUT_CURRENCY", "INPUT_AMOUNT_WITH_CURRENCY" ],
+            [ "SIGN" ] ],
+        "16" : [
+            [ "MESSAGE_CONFIRM_AGREEMENT", "INPUT_REFERENCE_NUMBER", "INPUT_DATE" ],
+            [ "SIGN" , "BUY" ] ],
+        "17" : [
+            [ "MESSAGE_CONFIRM_PROTECT_FILE", "INPUT_CHECKSUM" ],
+            [ "SIGN" ] ],
+        "18" : [
+            [ "MESSAGE_CONFIRM_PROTECT_FILE", "INPUT_CHECKSUM", "INPUT_TOTAL_AMOUNT" ],
+            [ "SIGN" ] ],
+        "19" : [
+            [ "MESSAGE_BUY_SELL_SHARES", "INPUT_BUY_SELL", "INPUT_AMOUNT" ],
+            [ "SIGN" ] ],
+        "20" : [
+            [ "MESSAGE_INTERNATIONAL_PAYMENT", "INPUT_IBAN", "INPUT_AMOUNT" ],
+            [ "SIGN" ] ],
+        "21" : [
+            [ "MESSAGE_INTERNATIONAL_PAYMENT" ],
+            [ "SIGN" ] ],
+        "22" : [
+            [ "INPUT_PG_BG", "INPUT_ACCOUNT_NUMBER" ],
+            [ "SIGN" ] ],
+        "23" : [
+            [ "INPUT_PG_BG", "INPUT_ACCOUNT_NUMBER", "INPUT_AMOUNT" ],
+            [ "SIGN" ] ]
+    }
+}
+
+
